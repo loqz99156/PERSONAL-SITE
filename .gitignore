@@ -1,0 +1,41 @@
+# Dependencies
+node_modules
+
+# Build outputs
+.next/
+dist/
+build/
+
+# Development files
+*.log
+*.tmp
+*.temp
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Temporary files
+chrome-mcp.log
+新建文本文档.txt
+
+# Documentation (optional)
+ARTICLE_PAGINATION.md
+TAILWIND_UPGRADE.md
+lighthouse-report.json
