@@ -1,191 +1,210 @@
-# 个人技术作品集
+﻿# Personal Tech Portfolio / 个人技术作品集
 
-基于 Next.js 15 和 TypeScript 构建的现代化个人网站，支持深浅色主题切换和完整的中文本地化。
+A modern personal website for Luoliba Shuo, built with Next.js 15 and TypeScript. It showcases projects, long-form MDX articles, and contact channels with a responsive, theme-aware UI.
 
-## ✨ 功能特性
+面向「罗里叭说」的现代化个人站点，基于 Next.js 15 与 TypeScript 构建，用于展示项目案例、长篇文章以及多种联系方式，支持响应式布局与智能主题切换。
 
-- 🎨 **现代UI设计** - 采用 Tailwind CSS 4.x，支持响应式布局
-- 🌓 **深浅色主题** - 自动检测系统偏好，支持手动切换
-- 📱 **移动优先** - 完全响应式设计，优化移动端体验
-- 🌏 **中文本地化** - 完整的中文界面和内容
-- 📝 **MDX文章系统** - 基于 Fumadocs 的文档管理
-- ⚡ **性能优化** - Next.js 15 App Router，静态生成
-- 🎯 **SEO友好** - 完整的元数据和结构化数据
+## Highlights / 核心特性
 
-## 🛠️ 技术栈
+- Modern UI powered by Tailwind CSS 4 and custom CSS variables  
+  采用 Tailwind CSS 4 与自定义 CSS 变量打造现代界面
+- Adaptive light/dark theme with manual override  
+  深浅色主题自动适配并支持手动切换
+- Modular theme tokens covering page canvas, sections, and cards  
+  模块化主题令牌统一管理页面背景、区块背景与卡片表面
+- Mobile-first responsive layout, progressively enhanced for desktop  
+  移动优先的响应式布局，并为桌面端逐步增强
+- Full Simplified Chinese copywriting across the site  
+  全站中文化文案与内容
+- MDX knowledge base powered by Fumadocs under `/articles`  
+  基于 Fumadocs 的 `/articles` 文档子站
+- Next.js 15 App Router with static export support  
+  使用 Next.js 15 App Router 并支持静态导出
+- SEO-ready metadata and structured data  
+  预置 SEO 元数据与结构化信息
 
-### 前端框架
-- **Next.js 15** - React 全栈框架
-- **TypeScript 5** - 类型安全的 JavaScript
-- **React 18** - 用户界面库
+## Tech Stack / 技术栈
 
-### 样式和UI
-- **Tailwind CSS 4** - 原子化 CSS 框架
-- **@tailwindcss/typography** - 文章样式插件
-- **CSS Variables** - 主题切换支持
+### Framework / 框架
+- Next.js 15
+- React 18
+- TypeScript 5
 
-### 内容管理
-- **Fumadocs** - MDX 文档系统
-- **MDX** - Markdown + JSX
+### Styling & UI / 样式与界面
+- Tailwind CSS 4
+- @tailwindcss/typography
+- CSS custom properties for theming  
+  使用 CSS 自定义属性驱动主题
 
-### 开发工具
-- **ESLint** - 代码质量检查
-- **PostCSS** - CSS 处理工具
-- **Autoprefixer** - CSS 前缀自动添加
+### Content / 内容管理
+- Fumadocs
+- MDX
 
-## 🚀 快速开始
+### Tooling / 开发工具
+- ESLint
+- PostCSS
+- Autoprefixer
 
-### 环境要求
+## Getting Started / 快速开始
 
-- Node.js 18.x 或更高版本
-- npm 或 yarn 包管理器
+### Requirements / 环境要求
+- Node.js 18+
+- npm 或 pnpm
 
-### 安装依赖
-
+### Install dependencies / 安装依赖
 ```bash
 npm install
 ```
 
-### 启动开发服务器
-
+### Start the dev server / 启动开发服务器
 ```bash
 npm run dev
 ```
+Visit http://localhost:3000 to view the site.  
+访问 http://localhost:3000 查看站点。
 
-访问 [http://localhost:3000](http://localhost:3000) 查看网站。
-
-### 构建生产版本
-
+### Production build / 构建生产版本
 ```bash
 npm run build
 npm start
 ```
 
-### 代码检查
-
+### Linting / 代码检查
 ```bash
 npm run lint
 ```
 
-## 📁 项目结构
-
+## Project Structure / 项目结构
 ```
 src/
-├── app/                    # Next.js App Router
-│   ├── articles/          # 文章页面
-│   ├── layout.tsx         # 根布局
-│   └── page.tsx           # 首页
-├── components/            # React 组件
-│   ├── layout/           # 布局组件
-│   │   ├── Header.tsx
-│   │   └── Footer.tsx
-│   ├── sections/         # 页面区块
-│   │   ├── Hero.tsx
-│   │   ├── FeaturedProjects.tsx
-│   │   ├── PaidExclusives.tsx
-│   │   ├── LatestArticles.tsx
-│   │   └── ContactSection.tsx
-│   ├── ui/              # 通用UI组件
-│   │   ├── Button.tsx
-│   │   ├── Card.tsx
-│   │   └── ThemeProvider.tsx
-│   └── docs/            # 文档相关组件
-├── lib/                 # 工具库和数据
-│   ├── data.ts         # 网站数据
-│   ├── types.ts        # TypeScript 类型定义
-│   └── docs/           # 文档配置
-└── styles/             # 样式文件
-    └── globals.css
+├── app/
+│   ├── articles/          # MDX documentation hub (Fumadocs) / Fumadocs 文档子站
+│   ├── layout.tsx         # Root layout / 根布局
+│   └── page.tsx           # Home page entry / 首页入口
+├── components/
+│   ├── ArticlePagination.tsx
+│   ├── ContactSection.tsx
+│   ├── ErrorBoundary.tsx
+│   ├── FeaturedProjects.tsx
+│   ├── Hero.tsx
+│   ├── LatestArticles.tsx
+│   ├── PaidExclusives.tsx
+│   ├── SocialMedia.tsx
+│   ├── ThemeProvider.tsx  # Global theme management and toggle / 全局主题管理
+│   └── docs/              # Fumadocs adapters / Fumadocs 适配层
+├── lib/
+│   ├── data.ts            # Display data / 展示数据
+│   ├── docs/              # MDX source wiring / 文档数据源
+│   └── types.ts           # Shared types / 类型定义
+└── app/globals.css        # Global styles and theme tokens / 全局样式与主题令牌
 ```
 
-## 🎨 设计系统
+## Design System / 设计系统
 
-### 配色方案
-- **主色调**: `#1173d4`
-- **浅色主题**: `#f6f7f8` 背景，`#1B1C26` 文字
-- **深色主题**: `#101922` 背景，`#e5e7eb` 文字
+### Theme Tokens / 主题令牌
+| Token | Light | Dark | Description | 说明 |
+| --- | --- | --- | --- | --- |
+| --background | #f6f7f8 | #101922 | Page canvas | 页面背景 |
+| --module-background | #e9ecf1 | #0b121c | Section background | 区块背景 |
+| --surface | #ffffff | #ffffff | Card surface | 卡片表面 |
+| --text-primary | #1B1C26 | #f7f9fc | Primary text | 主文字 |
+| --text-secondary | #4b5563 | #9aa6bf | Secondary text | 次文字 |
+| --surface-border | #d8dee6 | rgba(216,222,230,0.35) | Card border | 卡片描边 |
 
-### 响应式断点
-- **移动端**: `< 640px`
-- **平板端**: `≥ 640px` (sm:)
-- **桌面端**: `≥ 768px` (md:)
+### Breakpoints / 响应式断点
+- Mobile `< 640px` / 移动端 `< 640px`
+- Tablet `≥ 640px` / 平板端 `≥ 640px`
+- Desktop `≥ 768px` / 桌面端 `≥ 768px`
 
-### 组件设计
-- **圆角**: 默认 0.25rem，lg 0.5rem，xl 0.75rem
-- **间距**: 基于 8px 网格系统
-- **容器**: 最大宽度 832px
+### Component Baseline / 组件基线
+- Border radius: base 0.25rem / lg 0.5rem / xl 0.75rem / full 9999px  
+  圆角：基础 0.25rem / lg 0.5rem / xl 0.75rem / full 9999px
+- Spacing: 8px modular scale  
+  间距：8px 模块化网格
+- Container width: 832px max  
+  容器最大宽度：832px
 
-## 📝 内容管理
+## Content Management / 内容管理
 
-### 文章系统
-文章使用 MDX 格式存储在 `content/docs/` 目录下：
-
+### MDX Content / 文章内容
+MDX files live under `content/docs/`：
 ```markdown
 ---
-title: "文章标题"
-description: "文章描述"
+title: "Article title"
+description: "Article description"
 ---
-
-# Markdown 内容
+# Markdown body
 ```
+MDX 文件位于 `content/docs/`，通过 Frontmatter 定义标题与描述。
 
-### 数据配置
-网站数据存储在 `src/lib/data.ts` 中，包括：
-- 个人信息
-- 项目展示
-- 付费专栏
-- 联系方式
+### Data Sources / 数据来源
+`src/lib/data.ts` stores all showcased data (projects, paid exclusives, social channels, contact info, etc.).  
+`src/lib/data.ts` 维护站点数据，包括项目、专栏、社交渠道与联系方式。
 
-## 🌓 主题系统
+### Fumadocs Hub / 文档子站
+- Served at `/articles`
+- Uses `DocsLayout`
+- `themeSwitch` is disabled so the global top-right toggle remains the single source of truth
+- Inherits the global CSS variables for consistent dark-mode visuals
+- 位于 `/articles`，禁用 Fumadocs 自带主题开关，仅使用全局右上角切换按钮
+- 继承全局 CSS 变量，确保深色模式下的区块与卡片呈现一致
 
-### 主题切换
-- 自动检测系统偏好
-- 支持手动切换
-- 主题状态持久化
+## Theme System / 主题系统
 
-### 自定义主题
-在 `tailwind.config.ts` 中配置：
+### User Experience / 使用体验
+- Follows system preference by default; no hydration flash  
+  默认跟随系统偏好，避免水合闪烁
+- Persists choice in `localStorage`  
+  将选择持久化到 `localStorage`
+- Twin-icon switch (sun/moon) fixed at top-right  
+  右上角使用太阳/月亮双图标开关
+- `ThemeProvider` writes `data-theme` to `<body>` and toggles the `dark` class on `<html>`  
+  `ThemeProvider` 在 `<body>` 上写入 `data-theme`，并在 `<html>` 上切换 `dark` 类
 
-```typescript
-theme: {
-  extend: {
-    colors: {
-      primary: "#1173d4",
-      "background-light": "#f6f7f8",
-      "background-dark": "#101922",
-    }
-  }
+### Customization / 自定义
+Main tokens are defined in `src/app/globals.css`：
+```css
+:root {
+  --background-light: #f6f7f8;
+  --background-dark: #101922;
+  --module-background-light: #e9ecf1;
+  --module-background-dark: #0b121c;
+  --surface: #ffffff;
+  --surface-border-light: #d8dee6;
+  --surface-border-dark: rgba(216, 222, 230, 0.35);
+  --text-primary-light: #1B1C26;
+  --text-primary-dark: #f7f9fc;
+  --text-secondary-light: #4b5563;
+  --text-secondary-dark: #9aa6bf;
 }
 ```
+自定义品牌配色时，可调节上述变量。
 
-## 🚀 部署
+## Deployment / 部署
 
-### Vercel (推荐)
-1. 推送代码到 GitHub
-2. 在 Vercel 中导入项目
-3. 自动部署
+### Vercel (recommended) / 推荐使用 Vercel
+1. Push the repo to GitHub / 将代码推送到 GitHub
+2. Import the project in Vercel / 在 Vercel 中导入项目
+3. Trigger automatic builds and previews / 自动部署并生成预览环境
 
-### 其他平台
-支持所有兼容 Next.js 的部署平台：
-- Netlify
-- Railway
-- Digital Ocean
-- AWS
+### Other platforms / 其他平台
+Compatible with Netlify, Railway, DigitalOcean, AWS, or any provider that supports Next.js 15.  
+兼容 Netlify、Railway、DigitalOcean、AWS 等支持 Next.js 15 的平台。
 
-## 📄 许可证
+## License / 许可证
+MIT License (see LICENSE for details).  
+MIT 许可证（详情参见 LICENSE 文件）。
 
-MIT License - 详见 [LICENSE](LICENSE) 文件
+## Contributing / 贡献
+Issues and pull requests are welcome.  
+欢迎提交 Issue 与 Pull Request。
 
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request！
-
-## 📞 联系方式
-
-- **邮箱**: [your-email@example.com](mailto:your-email@example.com)
-- **微信**: [your-wechat-id](#)
-- **GitHub**: [你的GitHub地址](https://github.com/yourusername)
+## Contact / 联系方式
+- Email: your-email@example.com
+- WeChat: your-wechat-id
+- GitHub: https://github.com/yourusername
 
 ---
 
-构建于 ❤️ 使用 Next.js + TypeScript + Tailwind CSS
+Crafted with Next.js, TypeScript, and Tailwind CSS.  
+使用 Next.js、TypeScript 与 Tailwind CSS 打造。

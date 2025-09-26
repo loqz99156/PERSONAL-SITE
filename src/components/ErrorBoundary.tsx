@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from 'react';
 
@@ -10,15 +10,12 @@ export default function ErrorBoundary({ children }: { children: React.ReactNode 
     const handleHydrationError = (event: ErrorEvent) => {
       const errorMessage = event.message;
 
-      // Check if it's a hydration error from browser extension
       if (errorMessage.includes('hydration') && errorMessage.includes('data-atm-ext-installed')) {
-        // Silently ignore browser extension hydration errors
         event.preventDefault();
         event.stopPropagation();
         return false;
       }
 
-      // Handle other errors
       console.error('Error caught by boundary:', event);
       setHasError(true);
       setError(errorMessage);
@@ -33,12 +30,12 @@ export default function ErrorBoundary({ children }: { children: React.ReactNode 
 
   if (hasError) {
     return (
-      <div className="min-h-screen bg-background-light flex items-center justify-center p-4" style={{ backgroundColor: 'var(--background)' }}>
+      <div className="min-h-screen bg-[var(--background)] text-[var(--text-primary)] flex items-center justify-center p-4">
         <div className="text-center">
-          <h2 className="text-xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="mb-2 text-xl font-bold text-[var(--text-primary)]">
             出现错误
           </h2>
-          <p className="mb-4" style={{ color: 'var(--text-secondary)' }}>
+          <p className="mb-4 text-[var(--text-secondary)]">
             {error || '发生意外错误'}
           </p>
           <button
@@ -47,7 +44,7 @@ export default function ErrorBoundary({ children }: { children: React.ReactNode 
               setError(null);
               window.location.reload();
             }}
-            className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+            className="rounded-lg bg-primary px-4 py-2 text-white transition-colors hover:bg-primary/90"
           >
             重新加载页面
           </button>

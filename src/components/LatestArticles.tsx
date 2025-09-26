@@ -10,9 +10,9 @@ const articleSlugMap: Record<string, string> = {
 
 export default function LatestArticles() {
   return (
-    <section className="w-full bg-gray-100 dark:bg-gray-900 py-12 md:py-24">
+    <section className="w-full bg-[var(--module-background)] py-12 md:py-24">
       <div className="container mx-auto max-w-[52rem] px-4 md:px-6">
-        <h2 className="mb-9 text-center text-3xl font-bold tracking-tighter text-gray-900 dark:text-white sm:text-4xl">
+        <h2 className="mb-9 text-center text-3xl font-bold tracking-tighter text-[var(--text-primary)] sm:text-4xl">
           最新文章
         </h2>
 
@@ -25,7 +25,7 @@ export default function LatestArticles() {
               <Link
                 key={article.id}
                 href={href}
-                className="group flex items-start gap-4 rounded-lg bg-background-light p-4 transition-transform hover:scale-[1.01] dark:bg-background-dark md:p-6 border border-gray-300 dark:border-gray-600"
+                className="group flex items-start gap-4 rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-4 text-[var(--text-surface)] transition-transform hover:scale-[1.01] shadow-sm md:p-6"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -34,12 +34,12 @@ export default function LatestArticles() {
                   style={{ backgroundImage: `url("${article.imageUrl}")` }}
                 />
 
-                <div className="space-y-1 flex-1">
+                <div className="flex-1 space-y-1">
                   <p className="text-sm font-medium text-primary">{article.category}</p>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                  <h3 className="text-lg font-bold text-[var(--text-surface)]">
                     {article.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                  <p className="text-sm text-[var(--text-surface-secondary)]">
                     {article.description}
                   </p>
                 </div>

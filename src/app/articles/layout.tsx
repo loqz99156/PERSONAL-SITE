@@ -9,9 +9,10 @@ export default function ArticlesLayout({ children }: { children: ReactNode }) {
   return (
     <DocsProviders>
       <DocsLayout
+        themeSwitch={{ enabled: false }}
         tree={tree}
         nav={{
-          title: <div className="flex items-center justify-center text-2xl font-bold cursor-default">博客文章</div>,
+          title: <div className="flex items-center justify-center text-2xl font-bold cursor-default">技术文章</div>,
           enabled: true,
         }}
         links={[
