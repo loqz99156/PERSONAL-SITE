@@ -1,6 +1,7 @@
-﻿"use client";
+"use client";
 
 import { socialMediaData } from '@/lib/data';
+import Image from 'next/image';
 import type { SocialMediaData } from '@/lib/types';
 import { useState } from 'react';
 
@@ -64,10 +65,13 @@ export default function SocialMedia() {
             </button>
             <h3 className="mb-6 text-center text-xl font-bold text-[var(--text-surface)]">微信公众号</h3>
             <div className="mb-4 flex justify-center">
-              <img
+              <Image
                 src="/qrcode_for_gh_78236a7b027c_430.jpg"
                 alt="微信公众号二维码"
+                width={192}
+                height={192}
                 className="h-48 w-48 rounded-lg object-cover"
+                priority
               />
             </div>
             <p className="mb-6 text-center text-[var(--text-surface-secondary)]">罗里叭说</p>
@@ -95,10 +99,13 @@ export default function SocialMedia() {
             </button>
             <h3 className="mb-6 text-center text-xl font-bold text-[var(--text-surface)]">视频号</h3>
             <div className="mb-4 flex justify-center">
-              <img
+              <Image
                 src="/20250925202953_83_861.jpg"
                 alt="视频号二维码"
+                width={192}
+                height={192}
                 className="h-48 w-48 rounded-lg object-cover"
+                priority
               />
             </div>
             <p className="mb-6 text-center text-[var(--text-surface-secondary)]">罗里叭说 AI</p>
